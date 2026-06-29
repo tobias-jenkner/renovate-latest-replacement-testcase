@@ -1,0 +1,31 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "prHourlyLimit": 0,
+  "commitHourlyLimit": 0,
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "*"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "replace ubuntu python with python",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": [
+        "docker.io/ubuntu/python"
+      ],
+      "replacementName": "docker.io/python",
+      "enabled": true,
+      "replacementVersionLatest": true,
+      "allowedVersions": "/^3\\.13\\.[0-9]+$/",
+    },
+    // {
+    //   "allowedVersions": "/^3\\.13\\.[0-9]+(-[0-9]+)$/",
+    //   "matchPackageNames": [
+    //     "docker.io/python"
+    //   ],
+    //   "enabled": true,
+    // },
+  ]
+}
